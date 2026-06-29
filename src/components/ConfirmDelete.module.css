@@ -1,0 +1,67 @@
+.overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.45);
+  backdrop-filter: blur(4px);
+  z-index: 400;
+  display: flex; align-items: center; justify-content: center;
+  animation: fadeIn 0.15s ease;
+}
+
+.panel {
+  background: var(--clr-surface);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-modal);
+  width: 400px; max-width: calc(100vw - 32px);
+  padding: 32px 28px 24px;
+  text-align: center;
+  animation: slideUp 0.2s ease;
+}
+
+.iconWrap {
+  width: 60px; height: 60px;
+  background: var(--clr-danger-light);
+  color: var(--clr-danger);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 18px;
+}
+
+.title { font-size: 1.1rem; font-weight: 700; color: var(--clr-text); margin-bottom: 10px; }
+
+.body { font-size: 0.9rem; color: var(--clr-text-muted); line-height: 1.6; margin-bottom: 24px; }
+.body strong { color: var(--clr-text); }
+
+.footer { display: flex; gap: 10px; justify-content: center; }
+
+.cancelBtn {
+  padding: 10px 22px;
+  border: 1px solid var(--clr-border); border-radius: var(--radius-md);
+  background: transparent; color: var(--clr-text-muted);
+  font-size: 0.875rem; font-weight: 500;
+  transition: all var(--transition);
+}
+.cancelBtn:hover:not(:disabled) { border-color: var(--clr-text-muted); color: var(--clr-text); }
+.cancelBtn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.confirmBtn {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 22px;
+  border: none; border-radius: var(--radius-md);
+  background: var(--clr-danger); color: white;
+  font-size: 0.875rem; font-weight: 600;
+  transition: background var(--transition);
+}
+.confirmBtn:hover:not(:disabled) { background: var(--clr-danger-hover); }
+.confirmBtn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.spinner {
+  width: 14px; height: 14px;
+  border: 2px solid rgba(255,255,255,.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin    { to { transform: rotate(360deg); } }
+@keyframes fadeIn  { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(20px) scale(0.97); } to { opacity: 1; transform: none; } }

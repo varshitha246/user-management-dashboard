@@ -1,0 +1,93 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  backdrop-filter: blur(4px);
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.15s ease;
+}
+
+.panel {
+  background: var(--clr-surface);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-modal);
+  width: 420px;
+  max-width: calc(100vw - 32px);
+  animation: slideUp 0.2s ease;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.title { font-size: 1rem; font-weight: 700; color: var(--clr-text); }
+
+.close {
+  width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+  border: none; background: none; border-radius: var(--radius-sm);
+  color: var(--clr-text-muted);
+  transition: all var(--transition);
+}
+.close:hover { background: var(--clr-surface-alt); color: var(--clr-text); }
+
+.body { padding: 20px 24px; display: flex; flex-direction: column; gap: 14px; }
+
+.field { display: flex; flex-direction: column; gap: 5px; }
+
+.lbl { font-size: 0.78rem; font-weight: 600; color: var(--clr-text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+
+.input {
+  height: 40px; padding: 0 12px;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  background: var(--clr-surface-alt);
+  color: var(--clr-text);
+  font-size: 0.875rem;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  appearance: none;
+}
+.input:focus {
+  outline: none;
+  border-color: var(--clr-border-focus);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--clr-primary) 15%, transparent);
+}
+.input::placeholder { color: var(--clr-text-subtle); }
+
+.footer {
+  display: flex; gap: 10px; justify-content: flex-end;
+  padding: 16px 24px 20px;
+  border-top: 1px solid var(--clr-border);
+}
+
+.resetBtn {
+  padding: 9px 18px;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--clr-text-muted);
+  font-size: 0.875rem; font-weight: 500;
+  transition: all var(--transition);
+}
+.resetBtn:hover { border-color: var(--clr-danger); color: var(--clr-danger); }
+
+.applyBtn {
+  padding: 9px 20px;
+  border: none;
+  border-radius: var(--radius-md);
+  background: var(--clr-primary);
+  color: white;
+  font-size: 0.875rem; font-weight: 600;
+  transition: background var(--transition);
+}
+.applyBtn:hover { background: var(--clr-primary-hover); }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(20px) scale(0.97); } to { opacity: 1; transform: none; } }

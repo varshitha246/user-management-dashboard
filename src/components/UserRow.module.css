@@ -1,0 +1,86 @@
+.row {
+  transition: background var(--transition);
+}
+.row:hover { background: var(--clr-surface-alt); }
+.row:last-child .td { border-bottom: none; }
+
+.td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--clr-border);
+  vertical-align: middle;
+  font-size: 0.875rem;
+  color: var(--clr-text);
+}
+
+.id { font-size: 0.78rem; color: var(--clr-text-muted); font-family: var(--font-mono); }
+
+.nameCell { display: flex; align-items: center; gap: 10px; }
+
+.avatar {
+  width: 32px; height: 32px;
+  border-radius: var(--radius-full);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.7rem; font-weight: 700;
+  flex-shrink: 0;
+}
+
+.email { color: var(--clr-primary); transition: color var(--transition); }
+.email:hover { color: var(--clr-primary-hover); text-decoration: underline; }
+
+.dept {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.actions { display: flex; gap: 6px; }
+
+.editBtn, .deleteBtn {
+  display: flex; align-items: center; gap: 5px;
+  padding: 5px 10px;
+  border: 1px solid;
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem; font-weight: 500;
+  transition: all var(--transition);
+}
+
+.editBtn {
+  border-color: var(--clr-border);
+  background: transparent;
+  color: var(--clr-text-muted);
+}
+.editBtn:hover {
+  border-color: var(--clr-primary);
+  color: var(--clr-primary);
+  background: var(--clr-primary-light);
+}
+
+.deleteBtn {
+  border-color: var(--clr-border);
+  background: transparent;
+  color: var(--clr-text-muted);
+}
+.deleteBtn:hover {
+  border-color: var(--clr-danger);
+  color: var(--clr-danger);
+  background: var(--clr-danger-light);
+}
+
+/* Department color variants */
+.blue   { background: #eff6ff; color: #3b82f6; }
+.green  { background: #f0fdf4; color: #22c55e; }
+.purple { background: #faf5ff; color: #a855f7; }
+.orange { background: #fff7ed; color: #f97316; }
+.red    { background: #fef2f2; color: #ef4444; }
+.cyan   { background: #ecfeff; color: #06b6d4; }
+
+[data-theme='dark'] .blue   { background: #1e3a5f; color: #60a5fa; }
+[data-theme='dark'] .green  { background: #14331a; color: #4ade80; }
+[data-theme='dark'] .purple { background: #2e1b4e; color: #c084fc; }
+[data-theme='dark'] .orange { background: #3d2008; color: #fb923c; }
+[data-theme='dark'] .red    { background: #2d1515; color: #f87171; }
+[data-theme='dark'] .cyan   { background: #0e2d33; color: #22d3ee; }

@@ -1,0 +1,73 @@
+.wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.info {
+  font-size: 0.82rem;
+  color: var(--clr-text-muted);
+  font-weight: 500;
+  min-width: 120px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.navBtn {
+  width: 34px; height: 34px;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  background: var(--clr-surface);
+  color: var(--clr-text-muted);
+  transition: all var(--transition);
+}
+.navBtn:hover:not(:disabled) { border-color: var(--clr-primary); color: var(--clr-primary); background: var(--clr-primary-light); }
+.navBtn:disabled { opacity: 0.35; cursor: not-allowed; }
+
+.pageBtn {
+  min-width: 34px; height: 34px;
+  padding: 0 8px;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  background: var(--clr-surface);
+  color: var(--clr-text-muted);
+  font-size: 0.85rem; font-weight: 500;
+  transition: all var(--transition);
+}
+.pageBtn:hover { border-color: var(--clr-primary); color: var(--clr-primary); background: var(--clr-primary-light); }
+.pageBtn.active { background: var(--clr-primary); border-color: var(--clr-primary); color: white; font-weight: 600; }
+
+.dots { padding: 0 2px; color: var(--clr-text-subtle); font-size: 0.85rem; }
+
+.sizeWrap { display: flex; align-items: center; gap: 7px; }
+
+.sizeLabel { font-size: 0.82rem; color: var(--clr-text-muted); font-weight: 500; }
+
+.sizeSelect {
+  height: 34px; padding: 0 28px 0 10px;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  background: var(--clr-surface);
+  color: var(--clr-text);
+  font-size: 0.85rem;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2.5' stroke-linecap='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  cursor: pointer;
+  transition: border-color var(--transition);
+}
+.sizeSelect:focus { outline: none; border-color: var(--clr-border-focus); }
+
+@media (max-width: 600px) {
+  .wrap { justify-content: center; }
+  .info { text-align: center; width: 100%; }
+}
